@@ -8,6 +8,7 @@ import logging
 from typing import List, Dict, Any, Optional, AsyncGenerator
 
 from .base import AIProvider, AIMessage, AIResponse, MessageRole
+from .custom_provider import CustomAPIProvider
 from ..core.config import ai_config
 
 logger = logging.getLogger(__name__)
@@ -405,7 +406,8 @@ class AIProviderFactory:
         "anthropic": AnthropicProvider,
         "google": GoogleProvider,
         "gemini": GoogleProvider,  # Alias for google
-        "ollama": OllamaProvider
+        "ollama": OllamaProvider,
+        "custom": CustomAPIProvider
     }
 
     @classmethod
