@@ -3,6 +3,7 @@ Configuration management for LandPPT AI features
 """
 
 import os
+import json
 from typing import Optional, Dict, Any
 from pydantic import Field
 from pydantic_settings import BaseSettings
@@ -39,6 +40,19 @@ class AIConfig(BaseSettings):
     
     # Hugging Face Configuration
     huggingface_api_token: Optional[str] = Field(default=None, env="HUGGINGFACE_API_TOKEN")
+    
+    # Custom API Configuration
+    custom_api_url: Optional[str] = Field(default=None, env="CUSTOM_API_URL")
+    custom_api_key: Optional[str] = Field(default=None, env="CUSTOM_API_KEY")
+    custom_api_model: str = Field(default="custom-model", env="CUSTOM_API_MODEL")
+    custom_api_key_header: str = Field(default="Authorization", env="CUSTOM_API_KEY_HEADER")
+    custom_api_key_prefix: str = Field(default="Bearer", env="CUSTOM_API_KEY_PREFIX")
+    custom_request_format: str = Field(default="openai", env="CUSTOM_REQUEST_FORMAT")
+    custom_response_format: str = Field(default="openai", env="CUSTOM_RESPONSE_FORMAT")
+    custom_request_template: Optional[str] = Field(default=None, env="CUSTOM_REQUEST_TEMPLATE")
+    custom_response_content_path: str = Field(default="choices.0.message.content", env="CUSTOM_RESPONSE_CONTENT_PATH")
+    custom_response_model_path: str = Field(default="model", env="CUSTOM_RESPONSE_MODEL_PATH")
+    custom_response_usage_path: str = Field(default="usage", env="CUSTOM_RESPONSE_USAGE_PATH")
 
     # Tavily API Configuration (for research functionality)
     tavily_api_key: Optional[str] = Field(default=None, env="TAVILY_API_KEY")
@@ -125,6 +139,22 @@ class AIConfig(BaseSettings):
                 "max_tokens": self.max_tokens,
                 "temperature": self.temperature,
                 "top_p": self.top_p,
+            },
+            "custom": {
+                "api_url": self.custom_api_url,
+                "api_key": self.custom_api_key,
+                "model": self.custom_api_model,
+                "api_key_header": self.custom_api_key_header,
+                "api_key_prefix": self.custom_api_key_prefix,
+                "request_format": self.custom_request_format,
+                "response_format": self.custom_response_format,
+                "custom_request_template": json.loads(self.custom_request_template) if self.custom_request_template else {},
+                "response_content_path": self.custom_response_content_path,
+                "response_model_path": self.custom_response_model_path,
+                "response_usage_path": self.custom_response_usage_path,
+                "max_tokens": self.max_tokens,
+                "temperature": self.temperature,
+                "top_p": self.top_p,
             }
         }
 
@@ -145,6 +175,8 @@ class AIConfig(BaseSettings):
             return bool(config.get("api_key") and config.get("endpoint"))
         elif provider == "ollama":
             return self.enable_local_models
+        elif provider == "custom":
+            return bool(config.get("api_url") and config.get("api_key"))
 
         return False
     
