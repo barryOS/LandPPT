@@ -1,0 +1,11 @@
+{
+  "miniprogramRoot": "dist/weapp",
+  "projectname": "ai-multi-studio",
+  "description": "Future-tech AI creative studio",
+  "appid": "",
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": true
+  }
+}

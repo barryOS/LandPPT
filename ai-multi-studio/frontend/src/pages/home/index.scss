@@ -1,0 +1,62 @@
+@import '@/styles/theme.scss';
+
+.home-page {
+  min-height: 100vh;
+  padding: 48px 32px 80px;
+  background: radial-gradient(circle at 30% 20%, rgba(34,211,238,0.08), transparent 40%),
+    radial-gradient(circle at 70% 0%, rgba(168,85,247,0.12), transparent 45%),
+    var(--bg-dark);
+}
+
+.hero-card {
+  margin-bottom: 32px;
+  .eyebrow {
+    color: var(--accent-cyan);
+    letter-spacing: 0.3em;
+    font-size: 24px;
+  }
+  .title {
+    display: block;
+    margin-top: 16px;
+    font-size: 56px;
+    font-weight: 700;
+  }
+  .subtitle {
+    display: block;
+    margin-top: 12px;
+    color: var(--text-muted);
+  }
+}
+
+.control-card {
+  .section-title {
+    margin-top: 24px;
+    font-size: 28px;
+    color: var(--text-muted);
+  }
+  .selector,
+  .prompt {
+    margin-top: 12px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(2, 6, 23, 0.65);
+    border: 1px solid rgba(226, 232, 240, 0.08);
+    color: var(--text-primary);
+  }
+  .prompt {
+    min-height: 200px;
+  }
+  .submit {
+    margin-top: 32px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border: none;
+    border-radius: 999px;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .status {
+    display: block;
+    margin-top: 16px;
+    color: var(--text-muted);
+  }
+}

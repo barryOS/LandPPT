@@ -1,0 +1,25 @@
+{
+  "name": "ai-multi-studio-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Taro multi-end client for AI creative studio",
+  "scripts": {
+    "dev:weapp": "taro dev --type weapp",
+    "dev:h5": "taro dev --type h5",
+    "build:weapp": "taro build --type weapp",
+    "build:h5": "taro build --type h5"
+  },
+  "dependencies": {
+    "@tarojs/components": "^3.6.28",
+    "@tarojs/runtime": "^3.6.28",
+    "@tarojs/taro": "^3.6.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tarojs/cli": "^3.6.28",
+    "@types/react": "^18.3.5",
+    "typescript": "^5.6.2",
+    "sass": "^1.79.3"
+  }
+}
