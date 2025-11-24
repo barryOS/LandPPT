@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 报价器 - 唯实门窗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Mobile Simulation Styles -->
+    <style>
+        body { background-color: #f3f4f6; }
+        .mobile-container {
+            max-width: 414px; /* iPhone Max width */
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 414px;
+            background: white;
+            border-top: 1px solid #eee;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile-container flex flex-col pb-20">
+    
+    <!-- Header -->
+    <div class="bg-blue-600 text-white p-4 pt-12 flex items-center justify-between sticky top-0 z-50">
+        <span class="text-xl">‹</span>
+        <h1 class="font-bold text-lg">智能报价</h1>
+        <span class="text-sm">保存</span>
+    </div>
+
+    <!-- Product Info -->
+    <div class="p-4 bg-white mb-2">
+        <div class="flex gap-4">
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-20 h-20 object-cover rounded-lg">
+            <div>
+                <h2 class="font-bold text-gray-800">维罗纳 108 断桥平开窗</h2>
+                <p class="text-xs text-gray-500 mt-1">系统窗 / 隔音 / 断桥铝</p>
+                <p class="text-red-600 font-bold mt-2">¥ 880 <span class="text-xs text-gray-400">/m²</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Measurement Input -->
+    <div class="p-4 bg-white mb-2">
+        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+            <span class="w-1 h-4 bg-blue-600 mr-2 rounded"></span>尺寸信息
+        </h3>
+        <div class="flex gap-4 mb-3">
+            <div class="flex-1">
+                <label class="text-xs text-gray-500 mb-1 block">宽度 (mm)</label>
+                <input type="number" value="1500" class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-center font-mono text-lg focus:border-blue-500 outline-none" id="widthInput">
+            </div>
+            <div class="flex items-center text-gray-400 mt-4">×</div>
+            <div class="flex-1">
+                <label class="text-xs text-gray-500 mb-1 block">高度 (mm)</label>
+                <input type="number" value="1800" class="w-full bg-gray-50 border border-gray-200 rounded p-2 text-center font-mono text-lg focus:border-blue-500 outline-none" id="heightInput">
+            </div>
+        </div>
+        <div class="flex justify-between bg-blue-50 p-2 rounded text-sm">
+            <span class="text-blue-600">计价面积：</span>
+            <span class="font-bold text-blue-800" id="areaDisplay">2.70 m²</span>
+        </div>
+    </div>
+
+    <!-- Configuration -->
+    <div class="p-4 bg-white mb-2">
+        <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+            <span class="w-1 h-4 bg-blue-600 mr-2 rounded"></span>选配信息
+        </h3>
+        
+        <!-- Open Fan -->
+        <div class="mb-4">
+            <div class="flex justify-between items-center mb-2">
+                <label class="text-sm text-gray-600">开启扇数量 (¥300/扇)</label>
+                <div class="flex items-center border border-gray-200 rounded">
+                    <button class="px-3 py-1 text-gray-500" onclick="updateCount(-1)">-</button>
+                    <span class="px-3 border-l border-r border-gray-200 w-10 text-center" id="fanCount">1</span>
+                    <button class="px-3 py-1 text-gray-500" onclick="updateCount(1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glass Upgrade -->
+        <div class="mb-4">
+            <label class="text-sm text-gray-600 block mb-2">玻璃配置</label>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="border-2 border-blue-600 bg-blue-50 p-2 rounded text-center text-sm cursor-pointer relative">
+                    标配 5+20A+5
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs px-1 rounded-bl">✓</div>
+                </div>
+                <div class="border border-gray-200 p-2 rounded text-center text-sm cursor-pointer text-gray-500">
+                    升级 Low-E (+60/m²)
+                </div>
+            </div>
+        </div>
+
+        <!-- Color -->
+        <div class="mb-2">
+            <label class="text-sm text-gray-600 block mb-2">型材颜色</label>
+            <div class="flex gap-3">
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-gray-400 shadow-inner ring-2 ring-blue-500 ring-offset-2"></div>
+                    <span class="text-xs mt-1 text-blue-600">砂灰</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-yellow-700 shadow-inner"></div>
+                    <span class="text-xs mt-1 text-gray-400">咖啡</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-gray-100 border shadow-inner"></div>
+                    <span class="text-xs mt-1 text-gray-400">肌肤白</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Price Breakdown -->
+    <div class="p-4 bg-white">
+        <div class="flex justify-between text-sm text-gray-500 mb-1">
+            <span>基础窗款 (2.7m² × 880)</span>
+            <span>¥ 2,376</span>
+        </div>
+        <div class="flex justify-between text-sm text-gray-500 mb-1">
+            <span>开启扇 (1 × 300)</span>
+            <span>¥ 300</span>
+        </div>
+        <div class="border-t my-2"></div>
+        <div class="flex justify-between items-end">
+            <span class="font-bold text-gray-800">预估总价</span>
+            <span class="text-2xl font-bold text-red-600">¥ <span id="totalPrice">2,676</span></span>
+        </div>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-nav p-3 flex gap-3 shadow-lg">
+        <button class="flex-1 bg-gray-100 text-gray-800 py-3 rounded-lg font-bold text-sm">
+            加入购物车
+        </button>
+        <button class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-bold text-sm shadow-blue-200">
+            生成报价单
+        </button>
+    </div>
+
+</div>
+
+<script>
+    // Simple interactivity for the prototype
+    function updateCount(change) {
+        const el = document.getElementById('fanCount');
+        let val = parseInt(el.innerText) + change;
+        if(val < 0) val = 0;
+        el.innerText = val;
+        updateTotal();
+    }
+
+    const wInput = document.getElementById('widthInput');
+    const hInput = document.getElementById('heightInput');
+
+    [wInput, hInput].forEach(input => {
+        input.addEventListener('input', () => {
+            const w = parseInt(wInput.value) || 0;
+            const h = parseInt(hInput.value) || 0;
+            const area = (w * h / 1000000).toFixed(2);
+            document.getElementById('areaDisplay').innerText = area + " m²";
+            updateTotal();
+        });
+    });
+
+    function updateTotal() {
+        const w = parseInt(wInput.value) || 0;
+        const h = parseInt(hInput.value) || 0;
+        const area = w * h / 1000000;
+        const fans = parseInt(document.getElementById('fanCount').innerText);
+        
+        const basePrice = 880;
+        const fanPrice = 300;
+        
+        const total = (area * basePrice) + (fans * fanPrice);
+        document.getElementById('totalPrice').innerText = Math.round(total).toLocaleString();
+    }
+</script>
+
+</body>
+</html>
