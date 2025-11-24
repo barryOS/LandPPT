@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极境系统门窗 - 官方网站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#c6a87c', // Luxury Gold
+                        secondary: '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-primary antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-widest">JIJING<span class="text-accent">.</span>WINDOW</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#" class="hover:text-accent transition">首页</a>
+                <a href="#products" class="hover:text-accent transition">产品系列</a>
+                <a href="#about" class="hover:text-accent transition">品牌故事</a>
+                <a href="#process" class="hover:text-accent transition">服务流程</a>
+            </div>
+            <a href="detail.html" class="px-6 py-2 bg-primary text-white text-sm font-medium hover:bg-accent transition duration-300">
+                立即预约
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gray-900">
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-light mb-6 tracking-tight">重新定义 <span class="font-bold text-accent">家</span> 的边界</h1>
+            <p class="text-xl md:text-2xl mb-10 font-light text-gray-200">静音 · 隔热 · 安全 —— 德系精工系统门窗</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#products" class="px-8 py-4 border border-white hover:bg-white hover:text-primary transition duration-300">浏览产品</a>
+                <a href="detail.html" class="px-8 py-4 bg-accent border border-accent hover:bg-white hover:text-primary hover:border-white transition duration-300">免费量尺</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Categories -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">臻选系列</h2>
+                <div class="w-12 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <a href="detail.html" class="group cursor-pointer">
+                    <div class="relative overflow-hidden h-96 mb-4">
+                        <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Casement Window">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">极光系列 · 平开窗</h3>
+                    <p class="text-gray-500 text-sm">极致视野 / 超强密封 / 70mm框宽</p>
+                </a>
+
+                <!-- Product 2 -->
+                <a href="detail.html" class="group cursor-pointer">
+                    <div class="relative overflow-hidden h-96 mb-4">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Sliding Door">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">星际系列 · 推拉门</h3>
+                    <p class="text-gray-500 text-sm">重型推拉 / 极简窄边 / 顺滑静音</p>
+                </a>
+
+                <!-- Product 3 -->
+                <a href="detail.html" class="group cursor-pointer">
+                    <div class="relative overflow-hidden h-96 mb-4">
+                        <img src="https://images.unsplash.com/photo-1596233448119-31c902725a45?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Sunroom">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">天幕系列 · 阳光房</h3>
+                    <p class="text-gray-500 text-sm">智能遮阳 / 断桥隔热 / 休闲空间</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <i class="fas fa-volume-mute text-4xl text-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">深海级静音</h3>
+                    <p class="text-gray-600 text-sm">多腔体结构，三重密封设计，有效隔绝35dB噪音</p>
+                </div>
+                <div class="p-6">
+                    <i class="fas fa-thermometer-half text-4xl text-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">恒温隔热</h3>
+                    <p class="text-gray-600 text-sm">PA66尼龙隔热条，主要保持室内舒适温度</p>
+                </div>
+                <div class="p-6">
+                    <i class="fas fa-shield-alt text-4xl text-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">安防防盗</h3>
+                    <p class="text-gray-600 text-sm">进口五金配件，多锁点联动，安全稳固</p>
+                </div>
+                <div class="p-6">
+                    <i class="fas fa-tools text-4xl text-accent mb-4"></i>
+                    <h3 class="font-bold mb-2">匠心安装</h3>
+                    <p class="text-gray-600 text-sm">自有安装团队，标准化施工流程，终身维护</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">服务流程</h2>
+                <p class="text-gray-400">从咨询到交付，全程管家式服务</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center relative">
+                <!-- Line -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -z-10 transform -translate-y-1/2"></div>
+                
+                <!-- Steps -->
+                <div class="bg-primary p-4 text-center w-full md:w-auto z-10">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold">在线预约</h3>
+                    <p class="text-sm text-gray-400 mt-2">官网/电话预约</p>
+                </div>
+                <div class="bg-primary p-4 text-center w-full md:w-auto z-10">
+                    <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold">免费量尺</h3>
+                    <p class="text-sm text-gray-400 mt-2">设计师上门测量</p>
+                </div>
+                <div class="bg-primary p-4 text-center w-full md:w-auto z-10">
+                    <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold">方案报价</h3>
+                    <p class="text-sm text-gray-400 mt-2">出具3D效果图</p>
+                </div>
+                <div class="bg-primary p-4 text-center w-full md:w-auto z-10">
+                    <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="font-bold">精工生产</h3>
+                    <p class="text-sm text-gray-400 mt-2">智能工厂定制</p>
+                </div>
+                <div class="bg-primary p-4 text-center w-full md:w-auto z-10">
+                    <div class="w-16 h-16 bg-gray-800 border border-gray-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">5</div>
+                    <h3 class="font-bold">无尘安装</h3>
+                    <p class="text-sm text-gray-400 mt-2">成品保护交付</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-white tracking-widest mb-4">JIJING.WINDOW</div>
+                    <p class="text-sm">专注于高端系统门窗研发与制造，为全球家庭提供静音、舒适的居住解决方案。</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">产品</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent">平开窗系列</a></li>
+                        <li><a href="#" class="hover:text-accent">推拉窗系列</a></li>
+                        <li><a href="#" class="hover:text-accent">系统门系列</a></li>
+                        <li><a href="#" class="hover:text-accent">阳光房</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-phone mr-2"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i> contact@jijing.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 上海市浦东新区科技园88号</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">关注我们</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent hover:text-white transition"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-accent hover:text-white transition"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                &copy; 2025 极境系统门窗 版权所有 | ICP备12345678号
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
