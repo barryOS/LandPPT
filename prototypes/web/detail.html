@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极光系列平开窗 - 选配 - 极境系统门窗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#c6a87c',
+                        secondary: '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-primary antialiased bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-widest">JIJING<span class="text-accent">.</span>WINDOW</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-accent transition">首页</a>
+                <a href="#" class="text-accent font-bold">产品系列</a>
+                <a href="#" class="hover:text-accent transition">解决方案</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-500"><i class="fas fa-phone-alt text-accent mr-2"></i>400-123-4567</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Configurator Section -->
+    <div class="pt-24 pb-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Left: Image Gallery -->
+                <div class="w-full lg:w-2/3">
+                    <div class="relative h-[600px] bg-gray-100 mb-4 rounded-lg overflow-hidden group">
+                        <img id="mainImage" src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Product Image">
+                        <div class="absolute bottom-4 right-4 bg-white/80 px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm">
+                            <i class="fas fa-search-plus mr-1"></i> 查看大图
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="h-24 bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-accent" onclick="changeImage(this)">
+                            <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+                        <div class="h-24 bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-gray-300" onclick="changeImage(this)">
+                            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+                        <div class="h-24 bg-gray-100 rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-gray-300" onclick="changeImage(this)">
+                            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Product Details Tabs -->
+                    <div class="mt-12">
+                        <div class="border-b border-gray-200 mb-6">
+                            <div class="flex space-x-8">
+                                <button class="pb-4 border-b-2 border-accent font-bold text-primary">产品参数</button>
+                                <button class="pb-4 border-b-2 border-transparent text-gray-500 hover:text-primary">性能指标</button>
+                                <button class="pb-4 border-b-2 border-transparent text-gray-500 hover:text-primary">安装说明</button>
+                            </div>
+                        </div>
+                        <div class="prose max-w-none text-gray-600 text-sm leading-relaxed">
+                            <p>极光系列平开窗采用航空级原生铝材，型材壁厚1.8mm，符合新国标要求。标配PA66GF25尼龙隔热条，有效阻隔热量传递。采用三元乙丙(EPDM)发泡复合胶条，实现汽车级密封效果。</p>
+                            <ul class="grid grid-cols-2 gap-4 mt-4">
+                                <li><span class="font-bold text-primary">型材宽度：</span> 70mm</li>
+                                <li><span class="font-bold text-primary">玻璃配置：</span> 5+20A+5 中空钢化</li>
+                                <li><span class="font-bold text-primary">五金配件：</span> 德国好博/希美克</li>
+                                <li><span class="font-bold text-primary">隔音性能：</span> 35dB</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Configurator -->
+                <div class="w-full lg:w-1/3">
+                    <div class="sticky top-24">
+                        <h1 class="text-3xl font-bold mb-2">极光系列 · 系统平开窗</h1>
+                        <p class="text-gray-500 text-sm mb-6">Aurora Series System Casement Window</p>
+                        
+                        <div class="text-3xl text-accent font-bold mb-8">¥1,280 <span class="text-sm text-gray-400 font-normal">/ 平方米起</span></div>
+
+                        <!-- Steps -->
+                        <div class="space-y-6">
+                            
+                            <!-- Color Selection -->
+                            <div>
+                                <h3 class="text-sm font-bold mb-3 uppercase tracking-wider">1. 选择颜色</h3>
+                                <div class="flex space-x-3">
+                                    <button class="w-10 h-10 rounded-full bg-gray-900 border-2 border-accent shadow-sm ring-2 ring-offset-2 ring-accent" title="极夜黑"></button>
+                                    <button class="w-10 h-10 rounded-full bg-gray-500 border-2 border-transparent hover:scale-110 transition" title="深空灰"></button>
+                                    <button class="w-10 h-10 rounded-full bg-[#8B4513] border-2 border-transparent hover:scale-110 transition" title="琥珀咖"></button>
+                                    <button class="w-10 h-10 rounded-full bg-[#F5F5DC] border border-gray-300 border-transparent hover:scale-110 transition" title="象牙白"></button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">当前选择：极夜黑</p>
+                            </div>
+
+                            <!-- Glass Selection -->
+                            <div>
+                                <h3 class="text-sm font-bold mb-3 uppercase tracking-wider">2. 玻璃配置</h3>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer border border-accent bg-accent/5 p-3 rounded-lg flex items-center justify-between transition">
+                                        <span class="text-sm font-medium">标准中空</span>
+                                        <i class="fas fa-check-circle text-accent"></i>
+                                    </label>
+                                    <label class="cursor-pointer border border-gray-200 p-3 rounded-lg flex items-center justify-between hover:border-gray-300 transition">
+                                        <span class="text-sm font-medium">三玻两腔</span>
+                                    </label>
+                                    <label class="cursor-pointer border border-gray-200 p-3 rounded-lg flex items-center justify-between hover:border-gray-300 transition">
+                                        <span class="text-sm font-medium">夹胶静音</span>
+                                    </label>
+                                    <label class="cursor-pointer border border-gray-200 p-3 rounded-lg flex items-center justify-between hover:border-gray-300 transition">
+                                        <span class="text-sm font-medium">Low-E防晒</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Hardware Selection -->
+                            <div>
+                                <h3 class="text-sm font-bold mb-3 uppercase tracking-wider">3. 五金品牌</h3>
+                                <select class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-accent">
+                                    <option>德国好博 HOPPE (标配)</option>
+                                    <option>德国诺托 ROTO (+¥200/套)</option>
+                                    <option>极境定制 (+¥0)</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="mt-10 space-y-3">
+                            <button onclick="openModal()" class="w-full bg-primary text-white py-4 font-bold tracking-wider hover:bg-accent transition duration-300">
+                                预约免费量尺
+                            </button>
+                            <button class="w-full border border-gray-200 text-primary py-4 font-bold tracking-wider hover:border-primary transition duration-300">
+                                联系客服咨询
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-400 text-center mt-4"><i class="fas fa-shield-alt mr-1"></i> 5年质保 · 终身维护</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-md rounded-xl p-8 relative transform scale-95 transition-transform duration-300" id="modalContent">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-2">预约免费量尺</h2>
+                <p class="text-gray-500 text-sm">专业设计师上门测量，出具全屋方案</p>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">您的姓名</label>
+                    <input type="text" class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-accent transition" placeholder="请输入姓名">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">联系电话</label>
+                    <input type="tel" class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-accent transition" placeholder="请输入手机号">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">所在城市</label>
+                        <select class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-accent bg-white">
+                            <option>上海市</option>
+                            <option>北京市</option>
+                            <option>广州市</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">房屋状态</label>
+                        <select class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-accent bg-white">
+                            <option>毛坯房</option>
+                            <option>旧房翻新</option>
+                            <option>精装房</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" onclick="submitForm()" class="w-full bg-accent text-white py-3 rounded-lg font-bold mt-6 hover:bg-[#b59669] transition">
+                    立即提交
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Image Gallery Logic
+        function changeImage(thumb) {
+            const mainImg = document.getElementById('mainImage');
+            mainImg.src = thumb.querySelector('img').src;
+            
+            // Reset borders
+            document.querySelectorAll('[onclick="changeImage(this)"]').forEach(el => {
+                el.classList.remove('border-accent');
+                el.classList.add('border-transparent');
+            });
+            // Set active border
+            thumb.classList.remove('border-transparent');
+            thumb.classList.add('border-accent');
+        }
+
+        // Modal Logic
+        function openModal() {
+            const modal = document.getElementById('bookingModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('bookingModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function submitForm() {
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = '提交中...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = '预约成功！我们会尽快联系您';
+                btn.classList.remove('bg-accent');
+                btn.classList.add('bg-green-600');
+                
+                setTimeout(() => {
+                    closeModal();
+                    // Reset button
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.classList.add('bg-accent');
+                        btn.classList.remove('bg-green-600');
+                    }, 500);
+                }, 1500);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

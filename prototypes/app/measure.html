@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>预约量尺 - 极境门窗 App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#c6a87c',
+                        secondary: '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-primary min-h-screen">
+
+    <!-- Mobile Container -->
+    <div class="max-w-md mx-auto bg-white min-h-screen relative pb-24">
+        
+        <!-- Header -->
+        <header class="flex items-center p-4 bg-white sticky top-0 z-20 border-b border-gray-100">
+            <a href="home.html" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-50 rounded-full">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="flex-1 text-center font-bold text-lg pr-8">预约量尺</h1>
+        </header>
+
+        <!-- Progress Steps -->
+        <div class="bg-primary text-white p-6 pb-12">
+            <div class="flex items-center justify-between relative">
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -z-0"></div>
+                
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-xs font-bold text-primary border-2 border-accent">1</div>
+                    <span class="text-[10px] mt-2 text-accent">提交信息</span>
+                </div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-xs text-gray-400 border-2 border-gray-600">2</div>
+                    <span class="text-[10px] mt-2 text-gray-400">上门测量</span>
+                </div>
+                <div class="relative z-10 flex flex-col items-center">
+                    <div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-xs text-gray-400 border-2 border-gray-600">3</div>
+                    <span class="text-[10px] mt-2 text-gray-400">出具方案</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Card -->
+        <div class="mx-4 -mt-6 bg-white rounded-xl shadow-lg p-6 relative z-10">
+            <form class="space-y-6">
+                <!-- House Type -->
+                <div>
+                    <label class="block text-sm font-bold mb-3">房屋类型 <span class="text-red-500">*</span></label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="houseType" class="peer hidden" checked>
+                            <div class="border border-gray-200 rounded-lg p-3 text-center text-sm peer-checked:border-accent peer-checked:bg-accent/5 peer-checked:text-accent transition">
+                                毛坯房
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="houseType" class="peer hidden">
+                            <div class="border border-gray-200 rounded-lg p-3 text-center text-sm peer-checked:border-accent peer-checked:bg-accent/5 peer-checked:text-accent transition">
+                                旧房翻新
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="houseType" class="peer hidden">
+                            <div class="border border-gray-200 rounded-lg p-3 text-center text-sm peer-checked:border-accent peer-checked:bg-accent/5 peer-checked:text-accent transition">
+                                封阳台
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Needs -->
+                <div>
+                    <label class="block text-sm font-bold mb-3">定制需求 (多选)</label>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="cursor-pointer">
+                            <input type="checkbox" class="peer hidden">
+                            <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-600 peer-checked:bg-primary peer-checked:text-white transition">隔音降噪</span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" class="peer hidden">
+                            <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-600 peer-checked:bg-primary peer-checked:text-white transition">保温隔热</span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" class="peer hidden">
+                            <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-600 peer-checked:bg-primary peer-checked:text-white transition">防蚊防虫</span>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="checkbox" class="peer hidden">
+                            <span class="px-3 py-1.5 bg-gray-100 rounded-full text-xs text-gray-600 peer-checked:bg-primary peer-checked:text-white transition">阳光房</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4 pt-2 border-t border-gray-100">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">联系人 <span class="text-red-500">*</span></label>
+                        <input type="text" class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-accent rounded-lg px-4 py-3 text-sm transition outline-none" placeholder="怎么称呼您">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">手机号 <span class="text-red-500">*</span></label>
+                        <div class="flex">
+                            <span class="bg-gray-100 px-4 py-3 rounded-l-lg text-sm text-gray-500 border-r border-gray-200">+86</span>
+                            <input type="tel" class="flex-1 bg-gray-50 border border-transparent focus:bg-white focus:border-accent rounded-r-lg px-4 py-3 text-sm transition outline-none" placeholder="请输入手机号码">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">详细地址 <span class="text-red-500">*</span></label>
+                        <textarea class="w-full bg-gray-50 border border-transparent focus:bg-white focus:border-accent rounded-lg px-4 py-3 text-sm transition outline-none h-24 resize-none" placeholder="街道、小区、楼栋号"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Service Guarantee -->
+        <div class="mx-6 mt-6">
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-user-shield text-accent mb-2"></i>
+                    <span class="text-xs text-gray-500">隐私保护</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-hard-hat text-accent mb-2"></i>
+                    <span class="text-xs text-gray-500">专业团队</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-tag text-accent mb-2"></i>
+                    <span class="text-xs text-gray-500">透明报价</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="fixed bottom-0 w-full max-w-md bg-white border-t border-gray-100 p-4 safe-area-bottom">
+            <button onclick="submitBooking()" class="w-full bg-primary text-white py-4 rounded-full font-bold text-lg shadow-lg shadow-primary/30 active:scale-[0.98] transition">
+                立即预约
+            </button>
+        </div>
+
+        <!-- Success Toast -->
+        <div id="toast" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 text-white px-6 py-4 rounded-lg shadow-xl z-50 hidden flex-col items-center text-center min-w-[200px]">
+            <i class="fas fa-check-circle text-4xl text-green-500 mb-3"></i>
+            <p class="font-bold">预约成功</p>
+            <p class="text-xs text-gray-300 mt-1">客服将在24小时内联系您</p>
+        </div>
+
+    </div>
+
+    <script>
+        function submitBooking() {
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = '提交中...';
+            btn.classList.add('opacity-80');
+            
+            setTimeout(() => {
+                // Show Toast
+                const toast = document.getElementById('toast');
+                toast.classList.remove('hidden');
+                toast.classList.add('flex');
+                
+                // Reset Button
+                btn.innerText = originalText;
+                btn.classList.remove('opacity-80');
+
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex');
+                    // Redirect (mock)
+                    window.location.href = 'home.html';
+                }, 2000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

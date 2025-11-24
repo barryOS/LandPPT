@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>极境门窗 - App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        accent: '#c6a87c',
+                        secondary: '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-primary pb-20">
+
+    <!-- Mobile Container -->
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-2xl relative overflow-hidden">
+        
+        <!-- Top Bar -->
+        <header class="absolute top-0 left-0 w-full z-20 p-4 flex justify-between items-center text-white bg-gradient-to-b from-black/50 to-transparent">
+            <div class="text-lg font-bold tracking-widest">JIJING</div>
+            <div class="flex space-x-4">
+                <i class="fas fa-search text-lg"></i>
+                <i class="far fa-comment-dots text-lg"></i>
+            </div>
+        </header>
+
+        <!-- Hero Banner -->
+        <div class="relative h-96 bg-gray-800">
+            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                <div class="text-xs bg-accent inline-block px-2 py-1 mb-2 rounded-sm font-bold">新品首发</div>
+                <h2 class="text-2xl font-bold mb-1">极光系列 2.0</h2>
+                <p class="text-sm text-gray-300">定义未来人居新高度</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions (King Kong Area) -->
+        <div class="grid grid-cols-4 gap-4 p-6 bg-white -mt-4 relative z-10 rounded-t-3xl">
+            <a href="measure.html" class="flex flex-col items-center space-y-2">
+                <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                    <i class="fas fa-ruler-combined text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">预约量尺</span>
+            </a>
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-primary">
+                    <i class="fas fa-tasks text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">进度查询</span>
+            </div>
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-primary">
+                    <i class="fas fa-store text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">附近门店</span>
+            </div>
+            <div class="flex flex-col items-center space-y-2">
+                <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-primary">
+                    <i class="fas fa-headset text-xl"></i>
+                </div>
+                <span class="text-xs font-medium">在线客服</span>
+            </div>
+        </div>
+
+        <!-- Horizontal Scroll Products -->
+        <div class="pl-6 pb-8 bg-white">
+            <div class="flex justify-between items-center pr-6 mb-4">
+                <h3 class="text-lg font-bold">热销系列</h3>
+                <a href="#" class="text-xs text-gray-400">全部 <i class="fas fa-chevron-right text-[10px]"></i></a>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto no-scrollbar pr-6">
+                <!-- Card 1 -->
+                <div class="flex-none w-40 group">
+                    <div class="h-48 rounded-lg overflow-hidden relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover">
+                        <div class="absolute top-2 left-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded">销量TOP1</div>
+                    </div>
+                    <h4 class="font-bold text-sm">极光平开窗</h4>
+                    <p class="text-accent text-xs font-bold">¥1,280起</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="flex-none w-40 group">
+                    <div class="h-48 rounded-lg overflow-hidden relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-sm">星际推拉门</h4>
+                    <p class="text-accent text-xs font-bold">¥1,680起</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="flex-none w-40 group">
+                    <div class="h-48 rounded-lg overflow-hidden relative mb-2">
+                        <img src="https://images.unsplash.com/photo-1596233448119-31c902725a45?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-sm">天幕阳光房</h4>
+                    <p class="text-accent text-xs font-bold">¥2,200起</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Study Feed -->
+        <div class="bg-gray-50 p-6">
+            <h3 class="text-lg font-bold mb-4">灵感案例</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                    <div class="h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded flex items-center">
+                            <i class="far fa-image mr-1"></i> 6
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold mb-2">上海·汤臣一品 280㎡全屋定制</h4>
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>现代简约 · 极光系列</span>
+                            <span><i class="far fa-eye mr-1"></i> 2.3k</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                    <div class="h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold mb-2">杭州·桃花源 中式别墅门窗改造</h4>
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span>新中式 · 印象系列</span>
+                            <span><i class="far fa-eye mr-1"></i> 1.8k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Tab Bar -->
+        <div class="fixed bottom-0 w-full max-w-md bg-white border-t border-gray-100 py-3 px-6 flex justify-between items-center z-50">
+            <a href="#" class="flex flex-col items-center text-primary space-y-1">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-[10px] font-bold">首页</span>
+            </a>
+            <a href="#" class="flex flex-col items-center text-gray-400 space-y-1 hover:text-primary">
+                <i class="fas fa-th-large text-xl"></i>
+                <span class="text-[10px]">产品</span>
+            </a>
+            <a href="measure.html" class="flex flex-col items-center -mt-8">
+                <div class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg ring-4 ring-white">
+                    <i class="fas fa-plus text-xl"></i>
+                </div>
+                <span class="text-[10px] text-primary mt-1 font-medium">预约</span>
+            </a>
+            <a href="#" class="flex flex-col items-center text-gray-400 space-y-1 hover:text-primary">
+                <i class="fas fa-comment-alt text-xl"></i>
+                <span class="text-[10px]">消息</span>
+            </a>
+            <a href="#" class="flex flex-col items-center text-gray-400 space-y-1 hover:text-primary">
+                <i class="fas fa-user text-xl"></i>
+                <span class="text-[10px]">我的</span>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
